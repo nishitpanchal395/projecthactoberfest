@@ -1,0 +1,7 @@
+def list_to_dictionary(keys, values):
+  return dict(zip(keys, values))
+
+list1 = [1, 2, 3]
+list2 = ['one', 'two', 'three']
+
+print(list_to_dictionary(list1, list2))
