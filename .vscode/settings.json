@@ -1,0 +1,6 @@
+{
+    "vscode-corda.isCordaProject": false,
+    "files.associations": {
+        "vector": "cpp"
+    }
+}
