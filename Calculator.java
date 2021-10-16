@@ -1,54 +1,43 @@
 import java.util.Scanner;
 
-class Calculator {
-
+public class calculator {
     public static void main(String[] args) {
 
-    	double num1, num2;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter first number:");
+        char operator;
+        Double number1, number2, result;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Choose an operator: +, -, *, or /");
+        operator = input.next().charAt(0);
+        System.out.println("Enter first number");
+        number1 = input.nextDouble();
 
-        /* We are using data type double so that user
-         * can enter integer as well as floating point
-         * value
-         */
-        num1 = scanner.nextDouble();
-        System.out.print("Enter second number:");
-        num2 = scanner.nextDouble();
+        System.out.println("Enter second number");
+        number2 = input.nextDouble();
 
-        System.out.print("Enter an operator (+, -, *, /): ");
-        char operator = scanner.next().charAt(0);
-
-        scanner.close();
-        double output;
-
-        switch(operator)
-        {
+        switch (operator) {
             case '+':
-            	output = num1 + num2;
+                result = number1 + number2;
+                System.out.println(number1 + " + " + number2 + " = " + result);
                 break;
-
             case '-':
-            	output = num1 - num2;
+                result = number1 - number2;
+                System.out.println(number1 + " - " + number2 + " = " + result);
                 break;
 
             case '*':
-            	output = num1 * num2;
+                result = number1 * number2;
+                System.out.println(number1 + " * " + number2 + " = " + result);
                 break;
-
             case '/':
-            	output = num1 / num2;
+                result = number1 / number2;
+                System.out.println(number1 + " / " + number2 + " = " + result);
                 break;
 
-            /* If user enters any other operator or char apart from
-             * +, -, * and /, then display an error message to user
-             * 
-             */
             default:
-                System.out.printf("You have entered wrong operator");
-                return;
+                System.out.println("Invalid operator!");
+                break;
         }
 
-        System.out.println(num1+" "+operator+" "+num2+": "+output);
+        input.close();
     }
 }
