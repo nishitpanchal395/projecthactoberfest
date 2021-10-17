@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
+//height Calculator in c
 void hicm()
 {
 	float no,nocov;
