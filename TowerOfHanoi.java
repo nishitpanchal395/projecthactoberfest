@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+//Code Written in Java
+
 public class TowerOfHanoi
 {
     public static void shift(int n, String startPole, String intermediatePole, String endPole)
