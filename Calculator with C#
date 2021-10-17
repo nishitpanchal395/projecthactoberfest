@@ -1,4 +1,4 @@
-//Calculator with C# Language
+//Calculator with C# Language for Calculations
 
 
 private void button8_Click(object sender, EventArgs e)  
