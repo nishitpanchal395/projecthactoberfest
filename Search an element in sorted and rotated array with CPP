@@ -1,0 +1,77 @@
+// Search an element in sorted and rotated array
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int Search(vector<int> ,int );
+
+//User code will be pasted here
+
+int main(){
+
+    int t;
+    cin >> t;
+
+    while(t--){
+        int n;
+        cin >> n;
+        
+        vector<int> vec(n);
+        
+        for(int i =0;i<n;i++) 
+            cin >> vec[i];
+        
+        int target;
+        cin >> target;
+        
+        cout << Search(vec,target) << "\n";
+         
+    }
+}// } Driver Code Ends
+
+
+//User function template for C++
+
+// vec : given vector of elements
+// K : given value whose index we need to find 
+int pivote (vector<int> a, int n)
+{
+    int low = 0;
+    int high = n - 1;
+    
+    while(low <= high){
+        int mid = (high + low) / 2;
+        if(a[mid] > a[mid + 1])
+            return mid;
+        else if(a[mid] < a[mid - 1])
+            return mid - 1;
+            
+        if(a[low] < a[mid])
+            low = mid + 1;
+        else
+            high = mid - 1;
+    }
+    return -1;
+}
+int bs (vector<int> a,int low,int high,int k){
+    
+    while (low <= high){
+        int mid = (high + low) / 2;
+        if(a[mid] == k)
+            return mid;
+        if(a[mid] > k)
+            high = mid - 1;
+        else
+            low = mid + 1;
+    }
+    return -1;
+}
+int Search(vector<int> vec, int K) {
+    //code here
+    int pivot = pivote(vec,vec.size());
+    int ans = bs(vec,0,pivot,K);
+    if(ans == -1)
+        return bs(vec,pivot + 1 , vec.size()-1 , K);
+    else
+        return ans;
+}
