@@ -57,11 +57,11 @@ int main()
             design();
             printf("\t\t\t\t\tREGISTRATION\n");
             design();
-            printf("\t\t\tEnter your name:");
+            printf("\t\t\tENTER YOUR NAME:");
             while (getchar() != '\n');
             gets(name);
             printf("\n");
-            printf("\t\t\tAge:");
+            printf("\t\t\tAGE:");
             //while (getchar() != '\n');
             scanf("%d",&age);
             goto game;
@@ -71,7 +71,7 @@ int main()
         design();
         printf("\t\t\t\t\tINSTRUCTIONS\n");
         design();
-        //printf("Here there will be some instructions\n\n\n\n\n\n");
+       //INTRUCTIONS
         printf("\n\t\t> You will have 10 domains out of which you can choose only ONE.\n\n");
         printf("\t\t> You are free to choose your favourite domain.\n\n");
         printf("\t\t> There will be 10 questions in each domain.\n\n");
@@ -107,6 +107,9 @@ int main()
     quit:
         printf("\n\n\n");
         printf("\t\t\t\t\t-------THANK YOU-------\n\n");
+        printf("\t\t\t\t\t-------QUOTE OF THE DAY-------\n\n"); 
+        printf("\t\t\t\t\tThe best time to learn was 10 years ago, the second best time to leasrn is today !\n\n"); 
+        
         printf("\t\t\tPlease provide feedback so that we can improve\n\n");
         printf("\t\t\tHow much will you rate us on the scale of 5\n\t\t\t");
         scanf("%f",&f);
