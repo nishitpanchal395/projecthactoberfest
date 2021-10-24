@@ -1,5 +1,3 @@
-package com.serenity.test;
-
 /*
  * To find a missing words from a sentence
  */
