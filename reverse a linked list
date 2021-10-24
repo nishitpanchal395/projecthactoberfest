@@ -15,19 +15,21 @@ class recursion {
 
 	static Node reverse(Node head)
 	{
-		if (head == null || head.next == null)
-			return head;
-
-		/* reverse the rest list and put
-		the first element at the end */
-		Node rest = reverse(head.next);
-		head.next.next = head;
-
-		/* tricky step -- see the diagram */
-		head.next = null;
-
-		/* fix the head pointer */
-		return rest;
+		Node temp = head;
+		Node prev = null;
+		Node next = null;
+		while(temp!=null) 
+		{
+			next = temp.next;
+			temp.next = prev;
+			prev = temp;
+			temp = next;
+		}
+		while(prev!=null) 
+		{
+			System.out.println(prev.data);
+			prev = prev.next;
+		}
 	}
 
 	/* Function to print linked list */
