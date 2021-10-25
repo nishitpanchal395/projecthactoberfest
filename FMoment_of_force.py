@@ -2,6 +2,8 @@
 """
 Created on Tue Oct  8 13:12:18 2019
 
+# Fmoment of force in python
+
 @author: Suyash
 """
 def Moment_of_force():
