@@ -1,5 +1,8 @@
 import java.util.*;
 class Main {
+	
+	
+// Dictionary order in java
     
     public static void printLexo(String out, String s, char[] s_arr, boolean[] bol) {
         int com=out.compareTo(s);
