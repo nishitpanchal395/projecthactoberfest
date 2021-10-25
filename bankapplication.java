@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 class AccountDetails{
 	
+	
+	// bank application in java
+	
 	 public  int balance=0;
 	public  void setBalance(int n) {
 		balance=n;
