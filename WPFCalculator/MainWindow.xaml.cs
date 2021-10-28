@@ -94,7 +94,7 @@ namespace WPFCalculator
 
         private void Btn_equal_Click(object sender, RoutedEventArgs e)
         {
-            var result = model.ComputeOperation();
+            var result = model.SanitizeBeforeCoumpute().ComputeOperation();
             model.DisplayContent += $" = {result}";
         }
 

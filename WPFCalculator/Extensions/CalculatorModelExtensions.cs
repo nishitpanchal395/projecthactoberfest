@@ -71,5 +71,14 @@ namespace WPFCalculator.Extensions
 
             return new DataTable().Compute(valueToCompute, null).ToString();
         }
+
+        public static CalculatorModel SanitizeBeforeCoumpute(this CalculatorModel value)
+        {
+            if (!string.IsNullOrWhiteSpace(value.Operation))
+                return value;
+
+            value.Operation = value.DisplayContent.Replace("²", "^2").Replace("x", "*");
+            return value;
+        }
     }
 }
