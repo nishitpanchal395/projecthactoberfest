@@ -3,53 +3,96 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         mc:Ignorable="d"
-        Title="WPF calculator" Height="800" Width="550" WindowStyle="ToolWindow" ResizeMode="NoResize">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        Title="WPF calculator" Height="400" Width="350" WindowStyle="None" ResizeMode="NoResize" Background="Transparent">
+    <Border Background="#E5000000" CornerRadius="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <!--Result line-->
-        <TextBox x:Name="tb_result" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="5" Text="{Binding Path=DisplayContent, Mode=TwoWay}" VerticalContentAlignment="Center"/>
-        <Button x:Name="btn_delete" Grid.Row="0" Grid.Column="3" Content="Del." Margin="5" Click="Btn_delete_Click"/>
-        <Button x:Name="btn_clear" Grid.Row="0" Grid.Column="4" Content="C" Margin="5" Click="Btn_clear_Click"/>
+            <Button x:Name="Btn_exit" Grid.Row="0" Grid.Column="0" Margin="5" ToolTip="Close the app." Click="Btn_exit_Click">
+                <materialDesign:PackIcon Kind="LocationExit" Width="25" Height="25"/>
+            </Button>
+            
+            <!--Result line-->
+            <TextBox x:Name="tb_result" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="5" Text="{Binding Path=DisplayContent, Mode=TwoWay}" VerticalContentAlignment="Center" Foreground="White"/>
+            <Button x:Name="btn_delete" Grid.Row="1" Grid.Column="3" Margin="5" Click="Btn_delete_Click">
+                <materialDesign:PackIcon Kind="ArrowLeft" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_clear" Grid.Row="1" Grid.Column="4" Margin="5" Click="Btn_clear_Click">
+                <materialDesign:PackIcon Kind="LetterC" Width="30" Height="30"/>
+            </Button>
 
+            <!--First line-->
+            <Button x:Name="btn_seven" Grid.Column="0" Grid.Row="2" Margin="5" Click="Btn_seven_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Number7" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_eight" Grid.Column="1" Grid.Row="2" Margin="5" Click="Btn_eight_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Number8" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_nine" Grid.Column="2" Grid.Row="2" Margin="5" Click="Btn_nine_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Number9" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_multiply" Grid.Column="3" Grid.Row="2" Margin="5" Click="Btn_multiply_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Multiplication" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_square" Grid.Column="4" Grid.Row="2" Margin="5" Click="Btn_square_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="FormatSuperscript" Width="30" Height="30"/>
+            </Button>
 
-        <!--First line-->
-        <Button x:Name="btn_seven" Grid.Column="0" Grid.Row="1" Content="7" Margin="5" Click="Btn_seven_Click"/>
-        <Button x:Name="btn_eight" Grid.Column="1" Grid.Row="1" Content="8" Margin="5" Click="Btn_eight_Click"/>
-        <Button x:Name="btn_nine" Grid.Column="2" Grid.Row="1" Content="9" Margin="5" Click="Btn_nine_Click"/>
-        <Button x:Name="btn_multiply" Grid.Column="3" Grid.Row="1" Content="X" Margin="5" Click="Btn_multiply_Click"/>
-        <Button x:Name="btn_square" Grid.Column="4" Grid.Row="1" Content="x²" Margin="5" Click="Btn_square_Click"/>
+            <!--Second line-->
+            <Button x:Name="btn_four" Grid.Column="0" Grid.Row="3" Margin="5" Click="Btn_four_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Number4" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_five" Grid.Column="1" Grid.Row="3" Margin="5" Click="Btn_five_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Number5" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_six" Grid.Column="2" Grid.Row="3" Margin="5" Click="Btn_six_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Number6" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_minus" Grid.Column="3" Grid.Row="3" Margin="5" Click="Btn_minus_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Minus" Width="30" Height="30"/>
+            </Button>
 
-        <!--Second line-->
-        <Button x:Name="btn_four" Grid.Column="0" Grid.Row="2" Content="4" Margin="5" Click="Btn_four_Click"/>
-        <Button x:Name="btn_five" Grid.Column="1" Grid.Row="2" Content="5" Margin="5" Click="Btn_five_Click"/>
-        <Button x:Name="btn_six" Grid.Column="2" Grid.Row="2" Content="6" Margin="5" Click="Btn_six_Click"/>
-        <Button x:Name="btn_minus" Grid.Column="3" Grid.Row="2" Content="-" Margin="5" Click="Btn_minus_Click"/>
+            <!--Third line-->
+            <Button x:Name="btn_one" Grid.Column="0" Grid.Row="4" Margin="5" Click="Btn_one_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Number1" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_two" Grid.Column="1" Grid.Row="4" Margin="5" Click="Btn_two_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Number2" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_three" Grid.Column="2" Grid.Row="4" Margin="5" Click="Btn_three_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Number3" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_plus" Grid.Column="3" Grid.Row="4" Margin="5" Click="Btn_plus_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Plus" Width="30" Height="30"/>
+            </Button>
 
-        <!--Third line-->
-        <Button x:Name="btn_one" Grid.Column="0" Grid.Row="3" Content="1" Margin="5" Click="Btn_one_Click"/>
-        <Button x:Name="btn_two" Grid.Column="1" Grid.Row="3" Content="2" Margin="5" Click="Btn_two_Click"/>
-        <Button x:Name="btn_three" Grid.Column="2" Grid.Row="3" Content="3" Margin="5" Click="Btn_three_Click"/>
-        <Button x:Name="btn_plus" Grid.Column="3" Grid.Row="3" Content="+" Margin="5" Click="Btn_plus_Click"/>
-
-        <!--Fourth line-->
-        <Button x:Name="btn_zero" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Content="0" Margin="5" Click="Btn_zero_Click"/>
-        <Button x:Name="btn_coma" Grid.Column="2" Grid.Row="4" Content="," Margin="5" Click="Btn_coma_Click"/>
-        <Button x:Name="btn_equal" Grid.Column="3" Grid.Row="4" Content="=" Margin="5" Click="Btn_equal_Click"/>
-    </Grid>
+            <!--Fourth line-->
+            <Button x:Name="btn_zero" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Margin="5" Click="Btn_zero_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Number0" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_coma" Grid.Column="2" Grid.Row="5" Margin="5" Click="Btn_coma_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Comma" Width="30" Height="30"/>
+            </Button>
+            <Button x:Name="btn_equal" Grid.Column="3" Grid.Row="5" Margin="5" Click="Btn_equal_Click" Style="{StaticResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="Equal" Width="30" Height="30"/>
+            </Button>
+        </Grid>
+    </Border>
 </Window>

@@ -4,6 +4,21 @@
              xmlns:local="clr-namespace:WPFCalculator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!-- primary -->
+            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#349fda"/>
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="#FF777777"/>
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF222222"/>
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="#DDDDDD"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#FF000000"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="#FFFFFFFF"/>
+            <!-- accent -->
+            <SolidColorBrush x:Key="SecondaryAccentBrush" Color="#FFD14C25"/>
+            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="#FFFFFF"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
