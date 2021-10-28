@@ -111,5 +111,10 @@ namespace WPFCalculator
             model.DisplayContent = model.DisplayContent[0..^1];
             model.DisplayContent = model.Operation[0..^1];
         }
+
+        private void Btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
