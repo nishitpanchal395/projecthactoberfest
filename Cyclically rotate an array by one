@@ -1,0 +1,13 @@
+class Compute {
+    
+    public void rotate(long a[], long n)
+    {
+        long x = a[(int)n-1];
+        
+        for(int i=(int)n-1;i>0;i--){
+            a[i]=a[i-1];
+           
+        }
+         a[0]=x;
+    }
+}
