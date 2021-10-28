@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace WPFCalculator
@@ -6,6 +7,7 @@ namespace WPFCalculator
     public class CalculatorModel : INotifyPropertyChanged
     {
         private string displayContentValue = string.Empty;
+        private string operationValue = string.Empty;
 
         public string DisplayContent
         {
@@ -18,6 +20,23 @@ namespace WPFCalculator
                     NotifyPropertyChanged();
                 }
             }
+        }
+        public string Operation
+        {
+            get => operationValue;
+            set
+            {
+                if (value != operationValue)
+                {
+                    operationValue = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        internal bool Any(Func<object, bool> p)
+        {
+            throw new NotImplementedException();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
