@@ -1,0 +1,238 @@
+
+.myname{
+
+
+font-family: 'Niconne', cursive;
+
+}
+.programmer{
+  font-size: 2.1rem;
+      color:#8FBC8F;
+    font-weight: normal;
+    line-height: 2;
+}
+
+h1{
+  font-size: 4.62rem;
+  margin:50px auto 0;
+  font-family: 'Sacramento',cursive;
+
+    color:#8FBC8F;
+}
+
+h2{
+  font-family: 'Niconne',cursive;
+    color: #66BFBF;
+    margin-top: 30px;
+}
+
+h3{
+    color: #66BFBF;
+  font-family: 'Niconne',cursive;
+  margin-top: 100px;
+  font-weight: lighter;
+}
+
+hr{
+  border: dotted #EAF6F6 6px;
+  border-bottom: none;
+  width:10%;
+}
+
+.intro{
+  margin-top: 20px;
+}
+
+.skills{
+  margin-bottom: 120px;
+}
+
+.allmid{
+  background-color: #BBDADE;
+  padding-top: 0;
+}
+body{
+  margin:0;
+
+text-align: center;
+
+}
+
+.top-container{
+  background-color: #11999E;
+  position:relative;
+padding-top: 100px;
+
+}
+
+.middle-container{
+
+width: 60%;
+padding-left: 30px;
+padding-right: 30px;
+background-color: #F0F8FF;
+}
+
+.javatext{
+  text-align: left;
+}
+
+
+.ooptext{
+  text-align: left;
+}
+
+.webtext{
+  text-align: right;
+}
+
+.datatext{
+  text-align: right;
+}
+
+
+
+a{
+  color: #11999E;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.touch{
+  font-size: 35px;
+  color: #66BFBF;
+}
+
+a:hover{
+  color :#EAF6F6;
+}
+
+.copyright{
+  color: #EAF6F6;
+  padding-top: 20px;
+}
+
+.bottom-container{
+  background-color:#66BFBF ;
+  padding: 60px 0 20px;
+
+}
+
+.pro{
+font-family: 'Dancing Script', cursive;
+  text-decoration: underline;
+
+}
+
+.pro2{
+  font-family: 'Niconne', cursive;
+}
+
+.bottom-cloud{
+position: absolute;
+top: 350px;
+left: 400px;
+}
+
+
+.top-cloud{
+position: absolute;
+right:350px;
+top:65px;
+}
+
+
+.mountain{
+margin-bottom: 0;
+padding-bottom: 0;
+}
+
+.profile{
+  border-radius: 50%;
+  height:60%;
+  width: 60%;
+}
+
+
+.web{
+  height:30%;
+  width: 30%;
+  border-radius: 50%;
+  float: right;
+  margin-left: 30px;
+
+
+}
+
+
+.oops{
+  height:24%;
+  width: 24%;
+  border-radius: 50%;
+  float: left;
+  margin-right:30px;
+
+}
+
+.data-struct{
+  height:30%;
+  width: 30%;
+  border-radius: 50%;
+  float: right;
+  margin-left: 30px;
+margin-top: 10px;
+
+}
+
+
+.java{
+  height:30%;
+  width: 30%;
+  border-radius: 50%;
+  float: left;
+  margin-right: 30px;
+}
+
+
+p{
+  line-height: 2;
+  color: #40514E;
+}
+
+.skill-row{
+
+  margin-bottom: 40px;
+  padding-bottom: 50px;
+
+}
+
+
+
+
+.btn {
+  background: #11cdd4;
+  background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+  background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+  background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+  background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+  background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #30e3cb;
+  background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
+  text-decoration: none;
+}
