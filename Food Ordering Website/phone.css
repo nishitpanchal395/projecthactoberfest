@@ -1,0 +1,244 @@
+/* navigation */
+
+
+ #navbar{
+    font-family: 'Bree Serif';
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     position: sticky;
+     z-index: 99;   
+     top: 0px;
+     left: 0px;
+     right: 0px;
+     width: 100%;
+ }
+ #navbar ul{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* home */
+
+
+#home{
+    /* height: 732px; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 3px 37px;
+    align-items: center;
+}
+#homeheading{
+    margin: 8px 0px;
+}
+#home::before{
+    content: "";
+    position: absolute;
+    background: url(foodtop.jpg) no-repeat center center/cover;
+    height: 100%;
+    top: 17px;
+    width: 100%;
+    z-index: -3;
+    opacity: .8;
+}
+@media only screen and (min-device-width: 267px) and ( max-device-width: 311px) {
+    
+    #home::before{
+        content: "";
+   position: absolute;
+   background: url('foodtop.jpg') no-repeat center center/cover;
+   height: 127%;
+   width: 100%;
+   
+   z-index: -3; 
+   opacity: .8;
+   }
+
+
+}
+
+@media only screen and (min-device-width: 0px) and ( max-device-width: 312px) {
+    
+    #home::before{
+        content: "";
+   position: absolute;
+   background: url('foodtop.jpg') no-repeat center center/cover;
+   height: 145%;
+   width: 100%;
+   
+   z-index: -3; 
+   opacity: .8;
+   }
+
+
+}
+@media only screen and (min-device-width: 312px) and ( max-device-width: 342px) {
+    
+    #home::before{
+        content: "";
+   position: absolute;
+   background: url('foodtop.jpg') no-repeat center center/cover;
+   height: 121%;
+   width: 100%;
+   
+   z-index: -3; 
+   opacity: .8;
+   }
+
+
+}
+@media only screen and (min-device-width: 343px) and ( max-device-width: 352px) {
+    
+    #home::before{
+        content: "";
+   position: absolute;
+   background: url('foodtop.jpg') no-repeat center center/cover;
+   height: 120%;
+   width: 100%;
+   
+   z-index: -3; 
+   opacity: .8;
+   }
+
+
+}
+
+@media only screen and (min-device-width: 353px) and ( max-device-width: 378px) {
+    
+    #home::before{
+        content: "";
+   position: absolute;
+   background: url('foodtop.jpg') no-repeat center center/cover;
+   height: 110%;
+   width: 100%;
+   
+   z-index: -3; 
+   opacity: .8;
+   }
+
+
+}
+
+
+@media only screen and (min-device-width: 379px) and ( max-device-width: 568px) {
+    
+    #home::before{
+        content: "";
+   position: absolute;
+   background: url('foodtop.jpg') no-repeat center center/cover;
+   height: 100%;
+   width: 100%;
+   
+   z-index: -3; 
+   opacity: .8;
+   }
+
+
+}
+
+@media only screen and (min-device-width: 568px) and ( max-device-width: 573px) {
+    
+    #home::before{
+        content: "";
+   position: absolute;
+   background: url('foodtop.jpg') no-repeat center center/cover;
+   height: 100%;
+   width: 100%;
+   
+   z-index: -3; 
+   opacity: .8;
+   }
+
+
+}
+
+@media only screen and (min-device-width: 574px) and ( max-device-width: 610px) {
+    
+    #home::before{
+        content: "";
+   position: absolute;
+   background: url('foodtop.jpg') no-repeat center center/cover;
+   height: 90%;
+   width: 100%;
+   
+   z-index: -3; 
+   opacity: .8;
+   }
+
+
+}
+
+
+
+
+
+
+
+@media only screen and (min-device-width: 611px) and ( max-device-width: 1322px) {
+    
+    #home::before{
+        content: "";
+   position: absolute;
+   background: url('foodtop.jpg') no-repeat center center/cover;
+   height: 78%;
+   width: 100%;
+   
+   z-index: -3; 
+   opacity: .8;
+   }
+
+
+}
+
+
+/* services */
+
+#service-container{
+   
+}
+#service{
+
+    display: flex;
+    flex-direction: column;
+  
+}
+
+/* clients */
+
+
+#clients{
+  
+   
+   }
+
+   .clientimage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#clients::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+     background: url(foodbottom.jpg) no-repeat center center/cover;
+     z-index: -1;
+     opacity: .9;
+}
+/* contactus */
+
+
+#contactus{
+   
+    
+}
+#mcd img{
+    width: 306px;
+}
+
+
+
+/* socialmedia */
