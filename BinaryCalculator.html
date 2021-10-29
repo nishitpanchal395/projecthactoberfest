@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body
+        {
+            width: 33% ;
+        }
+        #res
+        {
+            background-color: lightgray;
+            border: solid ;
+            height: 48px ;
+            font-size: 20px;
+        }
+         button
+        {
+            width: 25%;
+            height: 36px;
+            font-size: 18px;
+            margin: 0px;
+            float: left;
+
+        }
+        #btn1,#btn0
+        {
+            background-color: lightgreen;
+            color: brown;
+        }
+        #btnClr, #btnEql
+        {
+            background-color: darkgreen;
+            color: white;
+        }
+        .operator
+        {
+            background-color: black;
+            color: red;
+        }
+    </style>
+
+    <title>Binary Calculator </title>
+</head>
+<body>
+    <div id="btns" class="container">
+        <table>
+            <div>
+               <tr>
+                   <td><input type="text" name="screen" id="res"></td>
+               </tr> 
+               <tr>
+                   <td>
+                       <button  id="btn0">0</button>
+                       <button  id="btn1">1</button>
+                       <button  id="btnClr">C</button>
+                       <button  id="btnEql">=</button>
+                   </td>
+               </tr>
+               <tr>
+                <td>
+
+                        <button  id="btnSum" class="operator" >+</button>
+                        <button  id="btnSub" class="operator" >-</button>
+                        <button  id="btnMul" class="operator" >*</button>
+                        <button  id="btnDiv" class="operator" >/</button>
+                </td>
+            </tr>
+            </div>
+        </table>
+    </div>
+    <script>
+        var screenValue='';
+        var screen= document.getElementById('res') ;
+        var op1='' , op , num1, num2, res ;
+        document.getElementById('btn0').addEventListener('click', (e)=>
+        {
+            screenValue= screenValue+ e.target.innerText ;
+            op1= op1+ e.target.innerText ;
+            screen.value= screenValue ;
+        })
+        document.getElementById('btn1').addEventListener('click', (e)=>
+        {
+            op1= op1+ e.target.innerText ;
+            screenValue= screenValue+ e.target.innerText ;
+            screen.value= screenValue ;
+        })
+        document.getElementById('btnClr').addEventListener('click' ,(e)=>{
+            screenValue='';
+            screen.value= screenValue
+        })
+       var oprt=  document.getElementsByClassName("operator") ;
+       for (const elm of oprt) {
+           elm.addEventListener('click', (e)=>{
+               op= e.target.innerText ;
+               num1 = parseInt(screenValue,2);
+               op1='';
+               screenValue= screenValue+ op ;
+               screen.value= screenValue ;
+            //    console.log("You Clicked ");
+           })
+       }
+       function dectoBin(num) {
+        let result = '';
+
+            while (num > 0){ 
+            result+= num % 2; 
+            num = Math.floor(num / 2); 
+            }
+
+        return result.split('').reverse().join('');
+       
+         }
+
+       document.getElementById('btnEql').addEventListener('click' , (e)=>{
+            num2= parseInt(op1,2) ;
+            var t= '';
+            t= num1+op+num2 ;
+            res= eval(t);
+            // console.log("num1= "+ num1);
+            // console.log("num2 = "+ num2) ;
+            // console.log("op  = "+ op) ;
+            // console.log("t   = "+ t ) ;
+            // console.log("res= "+ res);
+            op1 = dectoBin(res);
+            screenValue= op1 ;
+            screen.value= screenValue ;
+
+       })
+    //    console.log("arr" + oprt.value);
+       
+
+    </script>
+</body>
+</html>
