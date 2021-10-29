@@ -3,6 +3,7 @@
 #include<windows.h>
 #include<ctype.h>
 
+//Top-down design implementation(Declaring the signature of the functions that are defined below)
 void design();
 void QueDesign(int);
 void wait();
@@ -32,6 +33,7 @@ int main()
     printf("\t\tYour response:");
     scanf("%d",&n);
 
+    //Using switch case for giving user different options to select/proceed
     switch (n)
     {
     case 1:
@@ -414,7 +416,7 @@ goto game;
 return;
 
   famous_person:
-        wait();
+        wait(); //wait() system call to avoid this function to be called at the same time
 
     QueDesign(1);
     printf("\t\tWho was the first Indian scientist to win noble prize?\n\n");
@@ -1251,7 +1253,7 @@ system("cls");
 
 DispScore();
     Score(score);
-    goto game;
+    goto game; //goto statement that redirects the flow of the code/program
 
     return;
 
