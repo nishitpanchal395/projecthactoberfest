@@ -14,39 +14,35 @@ def multiply(x, y):
 def divide(x, y):
     return x / y
 
-
-print("Select operation.")
-print("1.Add")
-print("2.Subtract")
-print("3.Multiply")
-print("4.Divide")
-
 while True:
     # take input from the user
-    choice = input("Enter choice(1/2/3/4): ")
+    num1 = float(input("Enter first number: "))
+    choice = input("Enter the operation (+,-,*,/): ")
 
-    # check if choice is one of the four options
-    if choice in ('1', '2', '3', '4'):
-        num1 = float(input("Enter first number: "))
+    # check if choice is valid
+    if choice in ('+', '-', '*', '/'):
+        #take second number
         num2 = float(input("Enter second number: "))
 
-        if choice == '1':
+        #call function
+        if choice == '+':
             print(num1, "+", num2, "=", add(num1, num2))
 
-        elif choice == '2':
+        elif choice == '-':
             print(num1, "-", num2, "=", subtract(num1, num2))
 
-        elif choice == '3':
+        elif choice == '*':
             print(num1, "*", num2, "=", multiply(num1, num2))
 
-        elif choice == '4':
+        elif choice == '/':
             print(num1, "/", num2, "=", divide(num1, num2))
         
-        # check if user wants another calculation
-        # break the while loop if answer is no
-        next_calculation = input("Let's do next calculation? (yes/no): ")
-        if next_calculation == "no":
-          break
     
     else:
         print("Invalid Input")
+      
+     # check if user wants another calculation
+     # break the while loop if answer is no
+     next_calculation = input("Do you want to continue? (yes/no): ")
+     if next_calculation == "no":
+        break
