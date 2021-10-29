@@ -1,58 +1,34 @@
-//TO Search a number from a given shorted array using the binary search
+package com.company;
 
-import java.util.Scanner;
+public class BinarySearch {
 
-public class binarySearch {
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 4, 5 };
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-
-        int ans = bin(arr, num);
-        if (ans == -1) {
-            System.out.println("Number not matched");
-        } else
-            System.out.println(num + " is at the index " + ans);
-        sc.close();
+        int[] arr = {-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89};
+        int target = 22;
+        int ans = binarySearch(arr, target);
+        System.out.println(ans);
     }
 
-    static int bin(int[] arr, int target) {
-        int st = 0;
-
+    // return the index
+    // return -1 if it does not exist
+    static int binarySearch(int[] arr, int target) {
+        int start = 0;
         int end = arr.length - 1;
-        // for the dessending shorted array
-        if (arr[st] > arr[end]) {
-            while (st <= end) {
-                int mid = st + (end - st) / 2;
-                // if (arr[st] > arr[end]) {
-                if (target < arr[mid]) {
-                    st = mid + 1;
-                } else if (target > arr[mid]) {
-                    end = mid - 1;
-                } else {
-                    // number found (target==arr[mid])
-                    return mid;
-                }
-            }
-        }
-        // for the assending shorted array
-        if (arr[st] < arr[end]) {
-            while (st <= end) {
-                int mid = st + (end - st) / 2;
-                // if (arr[st] > arr[end]) {
-                if (target < arr[mid]) {
-                    end = mid - 1;
-                } else if (target > arr[mid]) {
-                    st = mid + 1;
-                } else {
-                    // number found (target==arr[mid])
-                    return mid;
-                }
-            }
 
+        while(start <= end) {
+            // find the middle element
+//            int mid = (start + end) / 2; // might be possible that (start + end) exceeds the range of int in java
+            int mid = start + (end - start) / 2;
+
+            if (target < arr[mid]) {
+                end = mid - 1;
+            } else if (target > arr[mid]) {
+                start = mid + 1;
+            } else {
+                // ans found
+                return mid;
+            }
         }
-        // number not found!!
         return -1;
-
     }
 }
