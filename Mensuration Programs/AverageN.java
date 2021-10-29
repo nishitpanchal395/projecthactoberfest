@@ -11,6 +11,6 @@ public class AverageN {
         for (int i = 0; i < N; i++) {
             sum += in.nextInt();
         }
-        System.out.println("Average is: " + sum/N);
+        System.out.println("Average is: " + (double)sum/N);
     }
 }
