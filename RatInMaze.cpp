@@ -88,7 +88,7 @@ bool solveMazeUtil(
 	return false;
 }
 
-////
+//////
 int main()
 {
 	int maze[N][N] = { { 1, 0, 0, 0 },
