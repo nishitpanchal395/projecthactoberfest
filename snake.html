@@ -1,0 +1,108 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <canvas id="canvas"></canvas>
+      <span id="score" style="position: absolute; left: 10px; right: 10px; font-size: 30px; color: #181818"></span>
+  </body>
+  <script type="text/javascript">
+const canvas = document.getElementById("canvas");
+const score = document.getElementById("score");
+const ctx = canvas.getContext("2d");
+
+canvas.width = canvas.height = 400;
+
+const sz = 10;
+const tz = canvas.width / sz;
+
+let pos, food, snake, vel;
+let pts = 0;
+
+function init(){
+  pts = 0;
+  pos = {x: 10, y: 10}, vel = {x: 1, y: 0};
+  snake = [
+    {x: 9, y: 10},
+    {x: 10, y: 10}
+  ]
+}
+
+init();
+
+function randomFood(){
+  food = {
+    x: Math.floor(Math.random() * tz),
+    y: Math.floor(Math.random() * tz)
+  }
+
+  for(let cell of snake) if(cell.x == food.x && cell.y == food.y) return randomFood();
+}
+randomFood();
+
+document.addEventListener('keydown', (e) => {
+  switch (e.keyCode) {
+    case 37:{
+      if(vel.x == 0 || vel.x == -1) return vel = {x: -1, y: 0}
+      else break;
+    }
+    case 38:{
+      if(vel.y == 0 || vel.y == -1) return vel = {x: 0, y: -1}
+      else break;
+    }
+    case 39:{
+      if(vel.x == 0 || vel.x == 1) return vel = {x: 1, y: 0}
+      else break;
+    }
+    case 40:{
+      if(vel.y == 0 || vel.y == 1) return vel = {x: 0, y: 1}
+      else break;
+    }
+  }
+});
+
+setInterval(update, 50);
+
+function update(){
+  ctx.fillStyle = "#565656";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "#36ff36";
+  for(let cell of snake){
+    // ctx.fillRect(cell.x*sz, cell.y*sz, sz, sz);
+    ctx.beginPath();
+    ctx.arc(cell.x*sz + sz/2, cell.y*sz + sz/2, sz/2, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+
+  ctx.fillStyle = "#e60000";
+
+  ctx.fillRect(food.x*sz, food.y*sz, sz, sz);
+  pos.x += vel.x;
+  pos.y += vel.y;
+
+  if(food.x == pos.x && pos.y == food.y){
+    snake.push({...pos});
+    pos.x += vel.x;
+    pos.y += vel.y;
+
+    pts++;
+    randomFood();
+  }
+
+  score.innerText = pts;
+  if(pos.x == 41) pos.x = 0;
+  else if(pos.x == -1) pos.x = 40;
+  else if(pos.y == -1) pos.y = 40;
+  else if(pos.y == 41) pos.y = 0;
+
+  if(vel.x || vel.y){
+    for(let cell of snake) if(cell.x == pos.x && cell.y == pos.y) return init();
+    snake.push({...pos});
+    snake.shift();
+  }
+}
+
+</script>
+</html>
