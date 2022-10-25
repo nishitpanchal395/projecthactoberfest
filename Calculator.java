@@ -1,52 +1,48 @@
+package com.start;
+
 import java.util.Scanner;
 
-//Calculator in java for Calculations
-
-public class calculator {
+public class Calculator {
     public static void main(String[] args) {
 
-        char operator;
-        Double number1, number2, result;
-        Scanner input = new Scanner(System.in);
-        System.out.println("Choose an operator: +, -, *, / or ^ ");
-        operator = input.next().charAt(0);
-        System.out.println("Enter first number");
-        number1 = input.nextDouble();
+        Scanner in = new Scanner(System.in);
+        int ans = 0;
 
-        System.out.println("Enter second number");
-        number2 = input.nextDouble();
+        while(true) {
+            System.out.println("use x or X for stop");
+            System.out.print("Enter an Operator: ");
+            char op = in.next().trim().charAt(0);
 
-        switch (operator) {
-            case '+':
-                result = number1 + number2;
-                System.out.println(number1 + " + " + number2 + " = " + result);
-                break;
-                
-            case '-':
-                result = number1 - number2;
-                System.out.println(number1 + " - " + number2 + " = " + result);
-                break;
+            if (op == '+' || op == '-' || op == '*' || op == '/' || op == '%') {
+                System.out.print("Enter first number: ");
+                int num1 = in.nextInt();
+                System.out.print("Enter Second number: ");
+                int num2 = in.nextInt();
 
-            case '*':
-                result = number1 * number2;
-                System.out.println(number1 + " * " + number2 + " = " + result);
+                if (op == '+') {
+                    ans = num1 + num2;
+                }
+                if (op == '-') {
+                    ans = num1 - num2;
+                }
+                if (op == '*') {
+                    ans = num1 * num2;
+                }
+                if (op == '/') {
+                    if (num2 != 0) {
+                        ans = num1 / num2;
+                    }
+                }
+                if (op == '%') {
+                    ans = num1 % num2;
+                }
+            } else if (op == 'x' || op == 'X') {
+                System.out.println("game over");
                 break;
-                
-            case '/':
-                result = number1 / number2;
-                System.out.println(number1 + " / " + number2 + " = " + result);
-                break;
-                
-            case '^':
-                result = Math.pow(number1, number2);
-                System.out.println(number1 + " ^ " + number2 + " = " + result);
-                break;
-                
-            default:
-                System.out.println("Invalid operator!");
-                break;
+            } else {
+                System.out.println("Invalid Operator!!");
+            }
+            System.out.println(ans);
         }
-
-        input.close();
     }
 }
