@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Windows;
+using WPFCalculator.Extensions;
 
 namespace WPFCalculator
 {
@@ -18,88 +19,97 @@ namespace WPFCalculator
 
         private void Btn_seven_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += "7";
+            model.AssignValue("7");
         }
 
         private void Btn_eight_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += "8";
+            model.AssignValue("8");
         }
 
         private void Btn_nine_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += "9";
+            model.AssignValue("9");
         }
 
         private void Btn_multiply_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += " x ";
+            model.AssignValue("x", "*");
+        }
+
+        private void Btn_square_Click(object sender, RoutedEventArgs e)
+        {
+            model.AssignValue("²", "^2");
         }
 
         private void Btn_four_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += "4";
+            model.AssignValue("4");
         }
 
         private void Btn_five_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += "5";
+            model.AssignValue("5");
         }
 
         private void Btn_six_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += "6";
+            model.AssignValue("6");
         }
 
         private void Btn_minus_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += " - ";
+            model.AssignValue("-");
         }
 
         private void Btn_one_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += "1";
+            model.AssignValue("1");
         }
 
         private void Btn_two_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += "2";
+            model.AssignValue("2");
         }
 
         private void Btn_three_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += "3";
+            model.AssignValue("3");
         }
 
         private void Btn_plus_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += " + ";
+            model.AssignValue("+");
         }
 
         private void Btn_zero_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += "0";
+            model.AssignValue("0");
         }
 
         private void Btn_coma_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent += ",";
+            model.AssignValue(",");
         }
 
         private void Btn_equal_Click(object sender, RoutedEventArgs e)
         {
-            var result = ComputeOperation(model.DisplayContent);
+            var result = model.SanitizeBeforeCoumpute().ComputeOperation();
             model.DisplayContent += $" = {result}";
         }
 
         private void Btn_clear_Click(object sender, RoutedEventArgs e)
         {
-            model.DisplayContent = string.Empty;
+            model.ClearValue();
         }
 
-        private static string ComputeOperation(string value)
+        private void Btn_delete_Click(object sender, RoutedEventArgs e)
         {
-            return new DataTable().Compute(value.Replace("x", "*"), null).ToString();
+            if (model.DisplayContent.Length <= 0 || model.Operation.Length <= 0)
+                return;
+
+            model.DisplayContent = model.DisplayContent[0..^1];
+            model.DisplayContent = model.Operation[0..^1];
         }
     }
 }

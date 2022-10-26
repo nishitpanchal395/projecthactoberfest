@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="self_balance">
+
+    <link name="Untitled">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="5.0"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Assem2_No_Wheel">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="meshes/stl/Assem2 No Wheel.stl" scale="0.002 0.002 0.002"/>
+        </geometry>
+        <material name="Material.001"/>
+      </visual>
+      <collision name="Assem2_No_Wheel.000">
+        <origin xyz="-0.0009 -0.00034 -0.00071" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="meshes/stl/Assem2 No Wheel.003.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Untitled.001">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="WHeelZ.001">
+        <origin xyz="0 0 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="meshes/stl/WHeelZ.003.stl" scale="0.002 0.002 0.002"/>
+        </geometry>
+        <material name="Material.003"/>
+      </visual>
+      <collision name="WHeelZ.001.000">
+        <origin xyz="2e-05 3e-05 -0.00026" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="meshes/stl/WHeelZ.005.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Untitled.002">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="WHeelZ">
+        <origin xyz="0 0 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="meshes/stl/WHeelZ.001.stl" scale="0.002 0.002 0.002"/>
+        </geometry>
+        <material name="Material.002"/>
+      </visual>
+      <collision name="WHeelZ.000">
+        <origin xyz="2e-05 3e-05 -0.00064" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="meshes/stl/WHeelZ.004.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="Untitled.001" type="continuous">
+      <origin xyz="-0.00334 -0.17966 -0.13111" rpy="1.5708 0 -3.14159"/>
+      <parent link="Untitled"/>
+      <child link="Untitled.001"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="100.0" velocity="0.5"/>
+    </joint>
+
+    <joint name="Untitled.002" type="continuous">
+      <origin xyz="-0.00334 0.18646 -0.13111" rpy="1.5708 0 0"/>
+      <parent link="Untitled"/>
+      <child link="Untitled.002"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="100.0" velocity="0.5"/>
+    </joint>
+
+    <material name="Material.001">
+      <color rgba="0.25 0.25 0.25 1.0"/>
+    </material>
+
+    <material name="Material.002">
+      <color rgba="0 0 0 1.0"/>
+    </material>
+
+    <material name="Material.003">
+      <color rgba="0 0 0 1.0"/>
+    </material>
+
+  </robot>

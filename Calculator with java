@@ -1,152 +1,30 @@
+import java.util.Scanner;
+
+public class FibSeries {
+
+ public static void main(String[] args) {
+  int FibLength;
+  Scanner sc = new Scanner(System.in); //create object
+
+  System.out.print("Please enter length: ");
+  FibLength = sc.nextInt();
+
+  int[] num = new int[FibLength];
+  //initialized first element to 0
+  num[0] = 0;
+  //initialized second element to 1
+  num[1] = 1;
   
-if(opText.equals("1/x"))  
-    {  
-    try  
-        {double tempd=1/(double)temp;  
-        cl.displayLabel.setText(MyCalculator.getFormattedText(tempd));}  
-    catch(ArithmeticException excp)  
-                        {cl.displayLabel.setText("Divide by 0.");}  
-    return;  
-    }  
-if(opText.equals("sqrt"))  
-    {  
-    try  
-        {double tempd=Math.sqrt(temp);  
-        cl.displayLabel.setText(MyCalculator.getFormattedText(tempd));}  
-            catch(ArithmeticException excp)  
-                    {cl.displayLabel.setText("Divide by 0.");}  
-    return;  
-    }  
-if(!opText.equals("="))  
-    {  
-    cl.number=temp;  
-    cl.op=opText.charAt(0);  
-    return;  
-    }  
-// process = button pressed  
-switch(cl.op)  
-{  
-case '+':  
-    temp+=cl.number;break;  
-case '-':  
-    temp=cl.number-temp;break;  
-case '*':  
-    temp*=cl.number;break;  
-case '%':  
-    try{temp=cl.number%temp;}  
-    catch(ArithmeticException excp)  
-        {cl.displayLabel.setText("Divide by 0."); return;}  
-    break;  
-case '/':  
-    try{temp=cl.number/temp;}  
-        catch(ArithmeticException excp)  
-                {cl.displayLabel.setText("Divide by 0."); return;}  
-    break;  
-}//switch  
-  
-cl.displayLabel.setText(MyCalculator.getFormattedText(temp));  
-//cl.number=temp;  
-}//actionPerformed  
-}//class  
-  
-/****************************************/  
-  
-class MyMemoryButton extends Button implements ActionListener  
-{  
-MyCalculator cl;  
-  
-/////////////////////////////////  
-MyMemoryButton(int x,int y, int width,int height,String cap, MyCalculator clc)  
-{  
-super(cap);  
-setBounds(x,y,width,height);  
-this.cl=clc;  
-this.cl.add(this);  
-addActionListener(this);  
-}  
-////////////////////////////////////////////////  
-public void actionPerformed(ActionEvent ev)  
-{  
-char memop=((MyMemoryButton)ev.getSource()).getLabel().charAt(1);  
-  
-cl.setClear=true;  
-double temp=Double.parseDouble(cl.displayLabel.getText());  
-  
-switch(memop)  
-{  
-case 'C':   
-    cl.memLabel.setText(" ");cl.memValue=0.0;break;  
-case 'R':   
-    cl.displayLabel.setText(MyCalculator.getFormattedText(cl.memValue));break;  
-case 'S':  
-    cl.memValue=0.0;  
-case '+':   
-    cl.memValue+=Double.parseDouble(cl.displayLabel.getText());  
-    if(cl.displayLabel.getText().equals("0") || cl.displayLabel.getText().equals("0.0")  )  
-        cl.memLabel.setText(" ");  
-    else   
-        cl.memLabel.setText("M");     
-    break;  
-}//switch  
-}//actionPerformed  
-}//class  
-  
-/*****************************************/  
-  
-class MySpecialButton extends Button implements ActionListener  
-{  
-MyCalculator cl;  
-  
-MySpecialButton(int x,int y, int width,int height,String cap, MyCalculator clc)  
-{  
-super(cap);  
-setBounds(x,y,width,height);  
-this.cl=clc;  
-this.cl.add(this);  
-addActionListener(this);  
-}  
-//////////////////////  
-static String backSpace(String s)  
-{  
-String Res="";  
-for(int i=0; i<s.length()-1; i++) Res+=s.charAt(i);  
-return Res;  
-}  
-  
-//////////////////////////////////////////////////////////  
-public void actionPerformed(ActionEvent ev)  
-{  
-String opText=((MySpecialButton)ev.getSource()).getLabel();  
-//check for backspace button  
-if(opText.equals("Backspc"))  
-{  
-String tempText=backSpace(cl.displayLabel.getText());  
-if(tempText.equals(""))   
-    cl.displayLabel.setText("0");  
-else   
-    cl.displayLabel.setText(tempText);  
-return;  
-}  
-//check for "C" button i.e. Reset  
-if(opText.equals("C"))   
-{  
-cl.number=0.0; cl.op=' '; cl.memValue=0.0;  
-cl.memLabel.setText(" ");  
-}  
-  
-//it must be CE button pressed  
-cl.displayLabel.setText("0");cl.setClear=true;  
-}//actionPerformed  
-}//class  
-  
-/********************************************* 
-Features not implemented and few bugs 
- 
-i)  No coding done for "+/-" button. 
-ii) Menubar is not included. 
-iii)Not for Scientific calculation 
-iv)Some of the computation may lead to unexpected result 
-   due to the representation of Floating point numbers in computer 
-   is an approximation to the given value that can be stored 
-   physically in memory. 
-***********************************************/  
+  //New number should be the sum of the last two numbers of the series.
+  for (int i = 2; i < FibLength; i++) {
+   num[i] = num[i - 1] + num[i - 2];
+  }
+
+  //Print Fibonacci Series
+  System.out.println("Fibonacci Series: ");
+  for (int i = 0; i < FibLength; i++) {
+   System.out.print(num[i] + " ");
+  }
+ }
+
+}

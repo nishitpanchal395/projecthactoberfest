@@ -1,0 +1,64 @@
+import java.util.*;
+  class New{
+      public static void main(String args[]){
+      Scanner input = new Scanner(System.in);
+          System.out.print("Enter Student Name : ");
+          String name = input.next();
+          
+          System.out.print("Enter Student Address : ");
+          String address = input.next();
+          
+          System.out.print("Enter Number of Subjects : ");
+          int number_of_subjects = input.nextInt();
+          
+          int marks = 0;
+          int max = 0;
+          int total = 0;
+          System.out.println();
+              for(int i = 0 ; i < number_of_subjects ; i++){
+          System.out.print("Enter Subject " + (i + 1) + " Marks : ");
+          marks = input.nextInt();
+          if(max < marks){
+            max = marks;
+          }
+          total = total + marks;
+          }
+          boolean flag = true;
+          while(flag){
+                System.out.println();
+                System.out.println("A. Show Student Details.");
+                System.out.println("B. Show Maximum Marks.");
+                System.out.println("C. Show Result.");
+                System.out.println("X. Exit");
+                System.out.println();
+                System.out.print("Please select one option : ");
+                String letter = input.next();
+                System.out.println();
+                
+                    switch(letter){
+                    case "A":
+                    System.out.println("Student Name : " + name);
+                    System.out.println("Student Address : " + address);
+                    break;
+                    case "B":
+                    System.out.println("Maximum Marks : " + max);
+                    break;
+                    case "C":
+                    double average = (double)total /
+                    number_of_subjects;
+                    String result = "Fail";
+                    if(average >= 50){
+                      result = "Pass";
+          }
+                    System.out.println("Result : " + result);
+                    break;
+                case "X":
+                System.out.println("Good Bye......");
+                flag = false;
+                        break;
+                        default :
+                          System.out.println("Please select valid option");
+}
+}
+}
+}
