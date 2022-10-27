@@ -1,0 +1,6 @@
+Algorithm to check if two strings are anagrams or not
+Input the two strings.
+Create an array for both the strings.
+Traverse both the strings and store the count of the alphabets of both the strings in respective arrays.
+Check if both the arrays are equal.
+If both the arrays are equal, return true. Else, return false.
